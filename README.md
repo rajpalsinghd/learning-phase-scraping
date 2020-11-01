@@ -1,6 +1,6 @@
 This is very basic learning stage(stage 1) web scraping tool. Further advance changes needs to be done.
 This stage includes basic understanding of scraping, and retrieving information from different html tags.
-This stage doesn't includes a proper travesal of tree which needs to be done on basis of our requirement.
+This stage doesn't includes a proper traversal of tree which needs to be done on basis of our requirement.
 
 Usage:
 
