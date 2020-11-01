@@ -1,0 +1,45 @@
+<!Doctype html>
+<html lang='en'>
+<head>
+</head>
+<body>
+
+<div>
+<h4>title &nbsp; &nbsp; {{information_scrapped['title']}}</h1>
+</div>
+
+<div>
+<h4>anchor(s)</h4>
+<table border='1'>
+<tr><td>anchors information</td></tr>
+{% for anchor in information_scrapped['anchors'] %}
+<tr><td>{{ anchor[0] }}</td><td>{{ anchor[1] }}</td<</tr>
+{% endfor %}
+</table>
+</div>
+
+<div>
+<h4>paragraph(s)</h4>
+<table border='1'>
+<tr><td>paragraph information</td></tr>
+{% for paragraph in information_scrapped['paragraphs'] %}
+<tr><td>{{ paragraph }}</td></tr>
+{% endfor %}
+</table>
+
+
+</div>
+
+<div>
+<h4>td(s)</h4>
+
+<table border='1'>
+<tr><td>td information</td></tr>
+{% for td in information_scrapped['tds'] %}
+<tr><td>{{ td }}</td></tr>
+{% endfor %}
+
+</div>
+
+</body>
+</html>
