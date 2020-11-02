@@ -2,11 +2,53 @@
 
 import requests
 from bs4 import BeautifulSoup,Comment
+from bs4.element import *
+
+
+
+
+
+#newly added functions starts here
+
+def retrieve(element):
+ if type(element)!=Tag:return None
+ cc=element.children
+ return cc
+
+
+def scrap_info(information_scrapped,element):
+ parent=element.parent.name
+ if parent in information_scrapped:
+  information_scrapped[parent].append(element.string)
+ else:
+  information_scrapped[parent]=[element.string]
+
+
+def traversing(information_scrapped,elements):
+ try:
+  for element in elements:
+   element_name=element.name
+   if element_name==None:
+    if element!='\n':
+     scrap_info(information_scrapped,element) 
+    continue
+   x=retrieve(element)
+   if x==None:
+     print(element)
+   else:traversing(information_scrapped,x)
+ except Exception as e:
+   print(e)
+
+
+#newly added function ends here
+
+
 
 
 """
  This helper function will return html content if fetched else will return None
  example:url="http://google.com"
+
 """
 
 def get_html_content(url):
@@ -19,6 +61,7 @@ def get_html_content(url):
   #Todo entry in logs
   return response_content
  return response_content
+
 
 """
  This helper function will create a soup object which is basically a tree structure(DOM) of given html
@@ -44,6 +87,8 @@ def get_title(soup):
   return None
 
 
+#outdated we don't need this function
+
 def get_content_on_basis_of_tag_name(soup,tag_name):
  if tag_name==None:return None
  if tag_name=='':return None
@@ -52,6 +97,8 @@ def get_content_on_basis_of_tag_name(soup,tag_name):
  except:
   return None
 
+
+#outdated can/ we will use this to extract links
 
 def get_content_on_basis_of_property_name(tag,property_name):
  if property_name==None or tag==None:return None
@@ -62,7 +109,7 @@ def get_content_on_basis_of_property_name(tag,property_name):
   return None
 
 
-
+#If we need to add comments functionality also
 
 def find_all_comments(soup):
    comments=None
@@ -73,6 +120,7 @@ def find_all_comments(soup):
    return comments
 
 
+#To generate a valid url
 
 def generate_valid_url(url):
  try:
@@ -84,3 +132,9 @@ def generate_valid_url(url):
   return url
  except:
   return None
+
+
+
+
+
+
