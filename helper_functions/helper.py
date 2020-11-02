@@ -23,6 +23,11 @@ def scrap_info(information_scrapped,element):
  else:
   information_scrapped[parent]=[element.string]
 
+def scrap_info_img(information_scrapped,element):
+ if 'img' in information_scrapped:
+   information_scrapped['img'].append(element.get('src'))
+ else:
+   information_scrapped['img']=[element.get('src')]
 
 def traversing(information_scrapped,elements):
  try:
@@ -35,7 +40,10 @@ def traversing(information_scrapped,elements):
    x=retrieve(element)
    if x==None:
      print(element)
-   else:traversing(information_scrapped,x)
+   else:
+     if element.name=='img':scrap_info_img(information_scrapped,element)
+     traversing(information_scrapped,x)
+   
  except Exception as e:
    print(e)
 
