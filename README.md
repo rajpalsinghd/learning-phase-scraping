@@ -1,11 +1,14 @@
-This is very basic learning stage(stage 1) web scraping tool. Further advance changes needs to be done.
-This stage includes basic understanding of scraping, and retrieving information from different html tags.
-This stage doesn't includes a proper traversal of tree which needs to be done on basis of our requirement.
-
+This project is on stage 5 where we are able to extract complete information of given url, along with this if some tag or keyword is provided
+then also it works.
+Along with this dumping a image inside a folder functionality being added. 
 Usage:
 
 1. py app.py
-2. open browser enter http://localhost:5000/
-3. Enter valid url
-4. Wait for scraper to scrap the website.
-5. The scraper will return information scraped in form of html.
+2. open any REST client.
+3. http://localhost:5000/scrap
+4. {
+  "url":"https://www.google.com/",
+   "keywords":[],
+  "tags":[]
+}
+5. The scraper will return information scraped in form of json.
