@@ -1,0 +1,22 @@
+#data
+{
+height:400px;
+}
+
+#showdata
+{
+overflow-y: auto;
+height:400px;
+}
+
+#myContainer
+{
+height:300px;
+}
+
+
+
+
+#processing{
+  height: 100%;
+}

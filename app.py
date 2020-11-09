@@ -3,13 +3,13 @@ from helper_functions import helper
 from error.WebScrapingError import *
 import logging
 import logs.log_initializer
+from flask_cors import CORS
 
 app=Flask(__name__)
-
+CORS(app)
 
 """
  This is our main end point
-
 """
 @app.route("/scrap",methods=["POST"])
 def do_scraping():
