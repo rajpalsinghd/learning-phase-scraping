@@ -55,4 +55,4 @@ For Keywords functionality(functionality number four):-
 5. The scraper will return information scraped in form of json.
 
 
-Note:Flipkart site is being used for only learning purposes , no data being used or dumped in any database from the site.
+Note:Flipkart's site is being used for only learning purposes , no data being used or dumped in any database from the site.
